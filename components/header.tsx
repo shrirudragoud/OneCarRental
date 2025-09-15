@@ -14,7 +14,7 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Car className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-foreground">CarRentz</span>
+            <span className="text-2xl font-bold text-foreground">OneCar</span>
           </div>
 
           {/* Desktop Navigation */}

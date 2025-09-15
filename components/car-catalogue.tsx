@@ -1,146 +1,138 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Star, Users, Fuel, Settings } from "lucide-react"
+import { MapPin, Star, Camera } from "lucide-react"
 
-const cars = [
+const destinations = [
   {
     id: 1,
-    name: "Mercedes C-Class",
-    type: "Luxury Sedan",
-    price: 89,
+    name: "Goa",
+    state: "Goa",
+    description: "Beautiful beaches, vibrant nightlife, and Portuguese heritage",
+    image: "/goa-beach-destination.jpg",
     rating: 4.8,
-    passengers: 4,
-    fuel: "Petrol",
-    transmission: "Automatic",
-    image: "/silver-mercedes-c-class-luxury-sedan.jpg",
     popular: true,
+    highlights: ["Beaches", "Nightlife", "Heritage"],
   },
   {
     id: 2,
-    name: "BMW X5",
-    type: "Premium SUV",
-    price: 125,
+    name: "Manali",
+    state: "Himachal Pradesh",
+    description: "Snow-capped mountains, adventure sports, and scenic valleys",
+    image: "/manali-mountains-destination.jpg",
     rating: 4.9,
-    passengers: 7,
-    fuel: "Hybrid",
-    transmission: "Automatic",
-    image: "/white-bmw-x5-suv-family-car.jpg",
     popular: false,
+    highlights: ["Mountains", "Adventure", "Nature"],
   },
   {
     id: 3,
-    name: "Ford Mustang",
-    type: "Sports Car",
-    price: 95,
+    name: "Rajasthan",
+    state: "Rajasthan",
+    description: "Royal palaces, desert safaris, and rich cultural heritage",
+    image: "/rajasthan-palace-destination.jpg",
     rating: 4.7,
-    passengers: 4,
-    fuel: "Petrol",
-    transmission: "Manual",
-    image: "/red-ford-mustang-sports-car-convertible.jpg",
     popular: false,
+    highlights: ["Palaces", "Desert", "Culture"],
   },
   {
     id: 4,
-    name: "Honda CR-V",
-    type: "Family SUV",
-    price: 75,
+    name: "Kerala Backwaters",
+    state: "Kerala",
+    description: "Serene backwaters, lush greenery, and Ayurvedic wellness",
+    image: "/kerala-backwaters-destination.jpg",
     rating: 4.6,
-    passengers: 5,
-    fuel: "Hybrid",
-    transmission: "Automatic",
-    image: "/blue-honda-cr-v-family-suv.jpg",
     popular: true,
+    highlights: ["Backwaters", "Nature", "Wellness"],
   },
   {
     id: 5,
-    name: "Tesla Model 3",
-    type: "Electric Sedan",
-    price: 110,
+    name: "Ladakh",
+    state: "Jammu & Kashmir",
+    description: "High-altitude desert, Buddhist monasteries, and adventure",
+    image: "/ladakh-landscape-destination.jpg",
     rating: 4.9,
-    passengers: 5,
-    fuel: "Electric",
-    transmission: "Automatic",
-    image: "/white-tesla-model-3-electric-sedan.jpg",
     popular: false,
+    highlights: ["Adventure", "Monasteries", "Landscape"],
   },
   {
     id: 6,
-    name: "Jeep Wrangler",
-    type: "Adventure SUV",
-    price: 85,
-    rating: 4.5,
-    passengers: 4,
-    fuel: "Petrol",
-    transmission: "Manual",
-    image: "/green-jeep-wrangler-off-road-adventure-suv.jpg",
+    name: "Udaipur",
+    state: "Rajasthan",
+    description: "City of lakes, magnificent palaces, and romantic ambiance",
+    image: "/udaipur-lake-palace-destination.jpg",
+    rating: 4.8,
     popular: false,
+    highlights: ["Lakes", "Palaces", "Romance"],
   },
 ]
 
 export function CarCatalogue() {
   return (
-    <section id="catalogue" className="py-20 bg-muted/30">
+    <section id="destinations" className="py-12 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4">
-            🚗 Car Catalogue
+        <div className="text-center mb-8 md:mb-12">
+          <Badge variant="secondary" className="mb-2 md:mb-4 text-xs md:text-sm">
+            🏔️ Popular Destinations
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
-            All Cars That <span className="text-primary">You Need</span>
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-balance">
+            Explore <span className="text-primary">Incredible India</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Choose from our diverse fleet of vehicles perfect for every adventure, from family road trips to romantic
-            getaways.
+          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty px-2">
+            Discover India's most beautiful destinations with our reliable car rental service. From beaches to
+            mountains, we'll get you there safely.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cars.map((car) => (
-            <Card key={car.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+          {destinations.map((destination) => (
+            <Card key={destination.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
               <CardContent className="p-0">
                 <div className="relative">
                   <img
-                    src={car.image || "/placeholder.svg"}
-                    alt={car.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    src={
+                      destination.image ||
+                      `/placeholder.svg?height=200&width=400&query=${destination.name || "/placeholder.svg"} India destination`
+                    }
+                    alt={destination.name}
+                    className="w-full h-32 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  {car.popular && <Badge className="absolute top-3 left-3 bg-primary">⭐ Popular</Badge>}
-                  <div className="absolute top-3 right-3 bg-background/80 backdrop-blur rounded-full p-2">
+                  {destination.popular && (
+                    <Badge className="absolute top-2 left-2 bg-primary text-xs">⭐ Popular</Badge>
+                  )}
+                  <div className="absolute top-2 right-2 bg-background/80 backdrop-blur rounded-full p-1 md:p-2">
                     <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      <span className="text-sm font-medium">{car.rating}</span>
+                      <Star className="h-3 w-3 md:h-4 md:w-4 fill-yellow-400 text-yellow-400" />
+                      <span className="text-xs md:text-sm font-medium">{destination.rating}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="mb-4">
-                    <h3 className="text-xl font-bold mb-1">{car.name}</h3>
-                    <p className="text-muted-foreground text-sm">{car.type}</p>
+                <div className="p-3 md:p-6">
+                  <div className="mb-2 md:mb-4">
+                    <div className="flex items-center gap-1 md:gap-2 mb-1 md:mb-2">
+                      <MapPin className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                      <span className="text-xs md:text-sm text-muted-foreground">{destination.state}</span>
+                    </div>
+                    <h3 className="text-sm md:text-xl font-bold mb-1">{destination.name}</h3>
+                    <p className="hidden md:block text-muted-foreground text-sm">{destination.description}</p>
                   </div>
 
-                  <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Users className="h-4 w-4" />
-                      <span>{car.passengers}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Fuel className="h-4 w-4" />
-                      <span>{car.fuel}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Settings className="h-4 w-4" />
-                      <span>{car.transmission}</span>
-                    </div>
+                  <div className="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-4">
+                    {destination.highlights.map((highlight, index) => (
+                      <Badge key={index} variant="outline" className="text-xs">
+                        {highlight}
+                      </Badge>
+                    ))}
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <div>
-                      <span className="text-2xl font-bold text-primary">${car.price}</span>
-                      <span className="text-muted-foreground">/day</span>
+                    <div className="hidden md:flex items-center gap-1 text-sm text-muted-foreground">
+                      <Camera className="h-4 w-4" />
+                      <span>Perfect for road trips</span>
                     </div>
-                    <Button>Book Now</Button>
+                    <Button variant="outline" size="sm" className="text-xs md:text-sm ml-auto md:ml-0 bg-transparent">
+                      Explore
+                    </Button>
                   </div>
                 </div>
               </CardContent>
