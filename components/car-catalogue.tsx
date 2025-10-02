@@ -94,10 +94,10 @@ export function CarCatalogue() {
                       `/placeholder.svg?height=200&width=400&query=${destination.name || "/placeholder.svg"} India destination`
                     }
                     alt={destination.name}
-                    className="w-full h-32 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-28 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {destination.popular && (
-                    <Badge className="absolute top-2 left-2 bg-primary text-xs">⭐ Popular</Badge>
+                    <Badge className="absolute top-2 left-2 bg-primary text-[10px] md:text-xs">⭐ Popular</Badge>
                   )}
                   <div className="absolute top-2 right-2 bg-background/80 backdrop-blur rounded-full p-1 md:p-2">
                     <div className="flex items-center gap-1">
@@ -107,19 +107,19 @@ export function CarCatalogue() {
                   </div>
                 </div>
 
-                <div className="p-3 md:p-6">
+                <div className="p-2 md:p-6">
                   <div className="mb-2 md:mb-4">
                     <div className="flex items-center gap-1 md:gap-2 mb-1 md:mb-2">
                       <MapPin className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                      <span className="text-xs md:text-sm text-muted-foreground">{destination.state}</span>
+                      <span className="text-[11px] md:text-sm text-muted-foreground">{destination.state}</span>
                     </div>
-                    <h3 className="text-sm md:text-xl font-bold mb-1">{destination.name}</h3>
+                    <h3 className="text-[13px] md:text-xl font-bold mb-1">{destination.name}</h3>
                     <p className="hidden md:block text-muted-foreground text-sm">{destination.description}</p>
                   </div>
 
                   <div className="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-4">
                     {destination.highlights.map((highlight, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
+                      <Badge key={index} variant="outline" className="text-[11px] md:text-xs">
                         {highlight}
                       </Badge>
                     ))}
@@ -130,7 +130,11 @@ export function CarCatalogue() {
                       <Camera className="h-4 w-4" />
                       <span>Perfect for road trips</span>
                     </div>
-                    <Button variant="outline" size="sm" className="text-xs md:text-sm ml-auto md:ml-0 bg-transparent">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="text-[11px] md:text-sm ml-auto md:ml-0 bg-transparent px-2 py-1 md:px-3 md:py-2"
+                    >
                       Explore
                     </Button>
                   </div>

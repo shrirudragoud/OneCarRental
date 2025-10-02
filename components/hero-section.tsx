@@ -439,7 +439,7 @@ export function HeroSection() {
                     <span className="text-2xl font-bold text-primary">₹{cars[selectedCar].price * 75}</span>/day
                   </p>
                   <Button
-                    className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-4 md:py-4 md:px-8 text-sm md:text-lg rounded-lg shadow-lg hover:shadow-xl transition-all w-full md:w-auto"
+                    className="bg-primary hover:bg-primary/90 text-white font-semibold py-2 px-3 md:py-4 md:px-8 text-sm md:text-lg rounded-lg shadow-lg hover:shadow-xl transition-all w-auto mx-auto md:mx-0"
                     size="lg"
                   >
                     <Phone className="h-4 w-4 md:h-5 md:w-5 mr-2" />
