@@ -346,7 +346,7 @@ export function HeroSection() {
                                     <Badge variant="outline" className="text-xs font-semibold px-2 py-1">
                                       ₹{car.price}/km
                                     </Badge>
-                                    <span className="text-xs text-muted-foreground">Starting from</span>
+                                    <span className="text-xs text-muted-foreground"></span>
                                   </div>
                                 </>
                               )}
@@ -401,7 +401,7 @@ export function HeroSection() {
                                 <Badge variant="outline" className="text-sm font-semibold px-3 py-1">
                                   ₹{car.price}/km
                                 </Badge>
-                                <span className="text-sm text-muted-foreground">Starting from</span>
+                                <span className="text-sm text-muted-foreground"></span>
                               </div>
 
 
@@ -447,7 +447,7 @@ export function HeroSection() {
                     <Badge variant="outline" className="text-sm font-semibold px-3 py-1">
                       ₹{cars[selectedCar].price}/km
                     </Badge>
-                    <span className="text-sm text-muted-foreground">Starting from</span>
+                    <span className="text-sm text-muted-foreground"></span>
                   </div>
                   <Button
                     onClick={() => window.open('tel:+917972456728', '_self')}
