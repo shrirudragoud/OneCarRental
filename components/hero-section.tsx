@@ -6,38 +6,49 @@ import { Badge } from "@/components/ui/badge"
 import { ChevronLeft, ChevronRight, Phone } from "lucide-react"
 import { useState } from "react"
 
-const cars = [
+const cars =[
   {
     id: 1,
     brand: "  MARUTI SUZUKI",
     logo: "/logo.png",
-    name: "  Maruti Suzuki Swift",
+    name: "  Maruti Suzuki Dzire",
     specs: "  Manual • Petrol • 5 Seats",
     colors: ["bg-red-500", "bg-white", "bg-blue-500", "bg-gray-400"],
-    image: "/maruti-suzuki-swift-red.jpg",
-    price: 25,
+    image: "https://imgd.aeplcdn.com/370x208/n/cw/ec/46045/marutisuzuki-dzire-exterior0.jpeg?wm=1&q=80",
+    price: 12
   },
   {
     id: 2,
     brand: "  MARUTI SUZUKI",
     logo: "/logo.png",
-    name: "  Maruti Ertiga",
-    specs: " Manual • Petrol • 7 Seats",
+    name: "  Maruti Suzuki Ertiga",
+    specs: "  Manual • Petrol • 7 Seats",
     colors: ["bg-gray-600", "bg-white", "bg-blue-600", "bg-red-600"],
-    image: "/maruti-ertiga-gray.jpg",
-    price: 35,
+    image: "https://auto.hindustantimes.com/cms-images/marutisuzuki_ertiga/images/exterior_marutisuzuki-ertiga2022_front-left-side_1150x666.jpeg",
+    price: 14
   },
   {
     id: 3,
-    brand: " TATA",
+    brand: "  TOYOTA",
     logo: "/logo.png",
-    name: "  Tata Tiago",
-    specs: "  Manual • Petrol • 5 Seats",
-    colors: ["bg-blue-600", "bg-white", "bg-red-500", "bg-gray-500"],
-    image: "/tata-tiago-blue.jpg",
-    price: 20,
+    name: "  Toyota Innova Crysta",
+    specs: "  Manual • Diesel • 7-8 Seats",
+    colors: ["bg-gray-500", "bg-white", "bg-blue-500", "bg-red-500"],
+    image: "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/140809/innova-crysta-exterior-right-front-three-quarter-3.png?isig=0&q=80&q=80",
+    price: 19
   },
+  {
+    id: 4,
+    brand: "  KIA",
+    logo: "/logo.png",
+    name: "  Kia Carens",
+    specs: "  Manual • Petrol • 7 Seats",
+    colors: ["bg-blue-600", "bg-white", "bg-red-600", "bg-gray-500"],
+    image: "https://img.autocarindia.com/mmv_images/colors/20250808114708_Kia_Carens_Clear_White[1].png?w=728&q=75",
+    price: 17
+  }
 ]
+
 
 export function HeroSection() {
   const [selectedCar, setSelectedCar] = useState(0)
@@ -329,7 +340,15 @@ export function HeroSection() {
                                 {car.name}
                               </h3>
                               {selectedCar === index && (
-                                <p className="car-specs-text text-muted-foreground mb-3">{car.specs}</p>
+                                <>
+                                  <p className="car-specs-text text-muted-foreground mb-2">{car.specs}</p>
+                                  <div className="flex items-center gap-2 mb-3">
+                                    <Badge variant="outline" className="text-xs font-semibold px-2 py-1">
+                                      ₹{car.price}/km
+                                    </Badge>
+                                    <span className="text-xs text-muted-foreground">Starting from</span>
+                                  </div>
+                                </>
                               )}
 
                             </div>
@@ -377,7 +396,13 @@ export function HeroSection() {
                               </div>
 
                               <h3 className="text-xl font-bold mb-3">{car.name}</h3>
-                              <p className="text-base text-muted-foreground mb-4">{car.specs}</p>
+                              <p className="text-base text-muted-foreground mb-2">{car.specs}</p>
+                              <div className="flex items-center gap-2 mb-4">
+                                <Badge variant="outline" className="text-sm font-semibold px-3 py-1">
+                                  ₹{car.price}/km
+                                </Badge>
+                                <span className="text-sm text-muted-foreground">Starting from</span>
+                              </div>
 
 
                               <div className="relative mb-4 overflow-hidden rounded-xl border border-gray-200 shadow-md">
@@ -418,6 +443,12 @@ export function HeroSection() {
               <div className="border-t pt-4 md:pt-6">
                 <div className="text-center space-y-4 md:space-y-5">
                   <h3 className="text-xl md:text-2xl font-bold">Ready to Book {cars[selectedCar].name}?</h3>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Badge variant="outline" className="text-sm font-semibold px-3 py-1">
+                      ₹{cars[selectedCar].price}/km
+                    </Badge>
+                    <span className="text-sm text-muted-foreground">Starting from</span>
+                  </div>
                   <Button
                     onClick={() => window.open('tel:+917972456728', '_self')}
                     className="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 md:py-5 md:px-10 text-lg md:text-xl rounded-xl shadow-lg hover:shadow-xl transition-all w-full max-w-sm mx-auto md:w-auto md:mx-0"
