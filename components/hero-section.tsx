@@ -9,30 +9,30 @@ import { useState } from "react"
 const cars = [
   {
     id: 1,
-    brand: "MARUTI SUZUKI",
-    logo: null,
-    name: "Maruti Suzuki Swift",
-    specs: "Manual • Petrol • 5 Seats",
+    brand: "  MARUTI SUZUKI",
+    logo: "/logo.png",
+    name: "  Maruti Suzuki Swift",
+    specs: "  Manual • Petrol • 5 Seats",
     colors: ["bg-red-500", "bg-white", "bg-blue-500", "bg-gray-400"],
     image: "/maruti-suzuki-swift-red.jpg",
     price: 25,
   },
   {
     id: 2,
-    brand: "MARUTI SUZUKI",
-    logo: null,
-    name: "Maruti Ertiga",
-    specs: "Manual • Petrol • 7 Seats",
+    brand: "  MARUTI SUZUKI",
+    logo: "/logo.png",
+    name: "  Maruti Ertiga",
+    specs: " Manual • Petrol • 7 Seats",
     colors: ["bg-gray-600", "bg-white", "bg-blue-600", "bg-red-600"],
     image: "/maruti-ertiga-gray.jpg",
     price: 35,
   },
   {
     id: 3,
-    brand: "TATA",
-    logo: null,
-    name: "Tata Tiago",
-    specs: "Manual • Petrol • 5 Seats",
+    brand: " TATA",
+    logo: "/logo.png",
+    name: "  Tata Tiago",
+    specs: "  Manual • Petrol • 5 Seats",
     colors: ["bg-blue-600", "bg-white", "bg-red-500", "bg-gray-500"],
     image: "/tata-tiago-blue.jpg",
     price: 20,
@@ -57,23 +57,23 @@ export function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen bg-gradient-to-br from-amber-50 via-background to-orange-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-6">
-          <Badge variant="outline" className="text-sm font-medium mb-3 bg-primary text-white border-primary">
+        <div className="text-center mb-8 md:mb-12">
+          <Badge variant="outline" className="text-sm md:text-base font-semibold mb-4 md:mb-6 bg-primary text-white border-primary px-4 py-2">
             🌟 Create Unforgettable Memories
           </Badge>
-          <h1 className="text-3xl md:text-4xl font-bold text-balance leading-tight mb-4">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-balance leading-tight mb-4 md:mb-6">
             Adventure Awaits <span className="text-primary">With Friends & Family</span>
           </h1>
-          <p className="text-base text-muted-foreground text-pretty max-w-2xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground text-pretty max-w-3xl mx-auto px-4">
             We provide the best car options and expert services for the greatest customer experience.
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <Card className="bg-white/80 backdrop-blur shadow-xl overflow-hidden">
-            <CardContent className="p-6">
+          <Card className="bg-white/95 backdrop-blur shadow-2xl overflow-hidden border border-gray-200 hover:shadow-3xl transition-all duration-300">
+            <CardContent className="p-4 md:p-8">
               {/* Cars Section */}
-              <div className="mb-6">
+              <div className="mb-4">
                 <style jsx>{`
                   /* Desktop Layout */
                   .car-layout {
@@ -89,12 +89,14 @@ export function HeroSection() {
                     .car-layout {
                       flex-direction: column;
                       height: auto;
-                      gap: 12px;
+                      gap: 16px;
                     }
                     
                     .mobile-carousel {
                       position: relative;
                       overflow: hidden;
+                      border-radius: 16px;
+                      margin: 0 8px;
                     }
                     
                     .mobile-car-container {
@@ -106,6 +108,7 @@ export function HeroSection() {
                     .mobile-car-slide {
                       min-width: 100%;
                       flex-shrink: 0;
+                      padding: 0 4px;
                     }
                     
                     .mobile-nav-button {
@@ -113,29 +116,36 @@ export function HeroSection() {
                       top: 50%;
                       transform: translateY(-50%);
                       z-index: 20;
-                      background: rgba(255, 255, 255, 0.9);
-                      border: 1px solid rgba(0, 0, 0, 0.1);
+                      background: rgba(255, 255, 255, 0.98);
+                      border: 2px solid rgba(0, 0, 0, 0.15);
                       border-radius: 50%;
-                      width: 40px;
-                      height: 40px;
+                      width: 48px;
+                      height: 48px;
                       display: flex;
                       align-items: center;
                       justify-content: center;
                       cursor: pointer;
-                      transition: all 0.2s ease;
+                      transition: all 0.3s ease;
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
                     }
                     
                     .mobile-nav-button:hover {
                       background: white;
-                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+                      transform: translateY(-50%) scale(1.08);
+                      border-color: rgba(0, 0, 0, 0.2);
+                    }
+                    
+                    .mobile-nav-button:active {
+                      transform: translateY(-50%) scale(0.95);
                     }
                     
                     .mobile-nav-left {
-                      left: 10px;
+                      left: 4px;
                     }
                     
                     .mobile-nav-right {
-                      right: 10px;
+                      right: 4px;
                     }
                   }
                   
@@ -166,7 +176,8 @@ export function HeroSection() {
                   /* Mobile car states */
                   @media (max-width: 768px) {
                     .car-card {
-                      height: 300px;
+                      height: 380px;
+                      margin-bottom: 8px;
                     }
                     .car-expanded, .car-collapsed {
                       flex: none;
@@ -195,7 +206,9 @@ export function HeroSection() {
                   /* Mobile image sizing */
                   @media (max-width: 768px) {
                     .car-image {
-                      height: 120px;
+                      height: 160px;
+                      object-fit: cover;
+                      border-radius: 12px;
                     }
                   }
                   
@@ -206,17 +219,17 @@ export function HeroSection() {
                   /* Desktop content padding */
                   @media (min-width: 769px) {
                     .car-expanded .car-content {
-                      padding: 1.25rem;
+                      padding: 1.75rem;
                     }
                     .car-collapsed .car-content {
-                      padding: 0.75rem;
+                      padding: 1.5rem;
                     }
                   }
                   
                   /* Mobile content padding */
                   @media (max-width: 768px) {
                     .car-content {
-                      padding: 1rem;
+                      padding: 1.75rem;
                     }
                   }
                   
@@ -242,28 +255,33 @@ export function HeroSection() {
                   
                   /* Responsive text sizing */
                   .car-title-expanded {
-                    font-size: 1.25rem;
-                    line-height: 1.75rem;
+                    font-size: 1.3rem;
+                    line-height: 1.6rem;
+                    font-weight: 700;
                   }
                   
                   .car-title-collapsed {
-                    font-size: 0.875rem;
-                    line-height: 1.25rem;
+                    font-size: 1rem;
+                    line-height: 1.3rem;
+                    font-weight: 600;
                   }
                   
                   .car-specs-text {
-                    font-size: 0.875rem;
-                    line-height: 1.25rem;
+                    font-size: 0.9rem;
+                    line-height: 1.3rem;
+                    font-weight: 500;
                   }
                   
                   @media (max-width: 768px) {
                     .car-title-expanded, .car-title-collapsed {
-                      font-size: 1.125rem;
+                      font-size: 1.2rem;
                       line-height: 1.5rem;
+                      font-weight: 700;
                     }
                     .car-specs-text {
-                      font-size: 0.8rem;
-                      line-height: 1.125rem;
+                      font-size: 0.95rem;
+                      line-height: 1.4rem;
+                      font-weight: 500;
                     }
                   }
                 `}</style>
@@ -286,13 +304,13 @@ export function HeroSection() {
                               : index === 1
                                 ? "bg-gradient-to-br from-blue-50 to-indigo-50"
                                 : "bg-gradient-to-br from-gray-50 to-slate-50"
-                          } shadow-md h-full border-0`}
+                          } shadow-xl h-full border border-gray-200 hover:border-gray-300 hover:shadow-2xl transition-all duration-300`}
                         >
                           <CardContent className="car-content p-0">
                             <div className="car-details">
                               <div className="flex items-center gap-2 mb-3">
                                 {car.logo ? (
-                                  <img src={car.logo || "/placeholder.svg"} alt={car.brand} className="h-5 w-auto" />
+                                  <img src={car.logo || "/placeholder.svg"} alt={car.brand} className="h-6 w-6 object-contain" />
                                 ) : (
                                   <div
                                     className={`w-5 h-5 rounded-full ${
@@ -314,32 +332,12 @@ export function HeroSection() {
                                 <p className="car-specs-text text-muted-foreground mb-3">{car.specs}</p>
                               )}
 
-                              <div className="flex gap-1 mb-4">
-                                {car.colors.map((color, idx) => (
-                                  <div
-                                    key={idx}
-                                    className={`${selectedCar === index ? "w-3 h-3" : "w-2 h-2"} rounded-full ${color} ${color === "bg-white" ? "border border-gray-300" : ""}`}
-                                  ></div>
-                                ))}
-                              </div>
                             </div>
 
-                            <div className="relative mb-4 overflow-hidden rounded-lg">
+                            <div className="relative mb-4 overflow-hidden rounded-xl border border-gray-200 shadow-md">
                               <img src={car.image || "/placeholder.svg"} alt={car.name} className="car-image w-full" />
                             </div>
 
-                            <div className="car-details">
-                              <div className="flex items-center justify-between">
-                                <div>
-                                  <span
-                                    className={`font-bold text-primary ${selectedCar === index ? "text-2xl" : "text-lg"}`}
-                                  >
-                                    ${car.price}
-                                  </span>
-                                  <span className="text-sm text-muted-foreground">/day</span>
-                                </div>
-                              </div>
-                            </div>
                           </CardContent>
                         </Card>
                       </div>
@@ -360,37 +358,29 @@ export function HeroSection() {
                                 : index === 1
                                   ? "bg-gradient-to-br from-blue-50 to-indigo-50"
                                   : "bg-gradient-to-br from-gray-50 to-slate-50"
-                            } shadow-md h-full border-0 mx-2`}
+                            } shadow-xl h-full border border-gray-200 hover:border-gray-300 hover:shadow-2xl transition-all duration-300 mx-2`}
                           >
                             <CardContent className="car-content p-0">
                               <div className="flex items-center gap-2 mb-3">
                                 {car.logo ? (
-                                  <img src={car.logo || "/placeholder.svg"} alt={car.brand} className="h-6 w-auto" />
+                                  <img src={car.logo || "/placeholder.svg"} alt={car.brand} className="h-7 w-7 object-contain" />
                                 ) : (
                                   <div
                                     className={`w-6 h-6 rounded-full ${
                                       index === 0 ? "bg-red-600" : index === 1 ? "bg-blue-600" : "bg-blue-800"
                                     } flex items-center justify-center`}
                                   >
-                                    <span className="text-black text-sm font-bold">{car.brand.charAt(0)}</span>
+                                    <span className="text-white text-sm font-bold">{car.brand.charAt(0)}</span>
                                   </div>
                                 )}
-                                <span className="text-sm font-medium text-muted-foreground">{car.brand}</span>
+                                <span className="text-base font-semibold text-muted-foreground">{car.brand}</span>
                               </div>
 
-                              <h3 className="car-title-expanded font-bold mb-2">{car.name}</h3>
-                              <p className="car-specs-text text-muted-foreground mb-3">{car.specs}</p>
+                              <h3 className="text-xl font-bold mb-3">{car.name}</h3>
+                              <p className="text-base text-muted-foreground mb-4">{car.specs}</p>
 
-                              <div className="flex gap-1 mb-4">
-                                {car.colors.map((color, idx) => (
-                                  <div
-                                    key={idx}
-                                    className={`w-3 h-3 rounded-full ${color} ${color === "bg-white" ? "border border-gray-300" : ""}`}
-                                  ></div>
-                                ))}
-                              </div>
 
-                              <div className="relative mb-4 overflow-hidden rounded-lg">
+                              <div className="relative mb-4 overflow-hidden rounded-xl border border-gray-200 shadow-md">
                                 <img
                                   src={car.image || "/placeholder.svg"}
                                   alt={car.name}
@@ -398,12 +388,6 @@ export function HeroSection() {
                                 />
                               </div>
 
-                              <div className="flex items-center justify-between">
-                                <div>
-                                  <span className="font-bold text-primary text-2xl">${car.price}</span>
-                                  <span className="text-sm text-muted-foreground">/day</span>
-                                </div>
-                              </div>
                             </CardContent>
                           </Card>
                         </div>
@@ -431,23 +415,20 @@ export function HeroSection() {
               </div>
 
               {/* Book Your Adventure Section */}
-              <div className="border-t pt-6">
-                <div className="text-center space-y-4">
-                  <h3 className="text-xl font-semibold">Ready to Book {cars[selectedCar].name}?</h3>
-                  <p className="text-muted-foreground">
-                    Starting from{" "}
-                    <span className="text-2xl font-bold text-primary">₹{cars[selectedCar].price * 75}</span>/day
-                  </p>
+              <div className="border-t pt-4 md:pt-6">
+                <div className="text-center space-y-4 md:space-y-5">
+                  <h3 className="text-xl md:text-2xl font-bold">Ready to Book {cars[selectedCar].name}?</h3>
                   <Button
-                    className="bg-primary hover:bg-primary/90 text-white font-semibold py-2 px-3 md:py-4 md:px-8 text-sm md:text-lg rounded-lg shadow-lg hover:shadow-xl transition-all w-auto mx-auto md:mx-0"
+                    onClick={() => window.open('tel:+917972456728', '_self')}
+                    className="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 md:py-5 md:px-10 text-lg md:text-xl rounded-xl shadow-lg hover:shadow-xl transition-all w-full max-w-sm mx-auto md:w-auto md:mx-0"
                     size="lg"
                   >
-                    <Phone className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+                    <Phone className="h-5 w-5 md:h-6 md:w-6 mr-3" />
                     <span className="md:hidden">Call Us Now</span>
                     <span className="hidden md:inline">Call Us Now - Book {cars[selectedCar].name}</span>
                   </Button>
-                  <p className="text-sm text-muted-foreground">
-                    Call us at <span className="font-semibold text-primary">+91 7972456728</span> to book instantly
+                  <p className="text-base md:text-lg text-muted-foreground">
+                    Call us at <span className="font-bold text-primary text-lg md:text-xl">+91 7972456728</span> to book instantly
                   </p>
                 </div>
               </div>

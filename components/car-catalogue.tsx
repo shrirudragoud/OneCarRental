@@ -70,22 +70,22 @@ export function CarCatalogue() {
   return (
     <section id="destinations" className="py-12 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 md:mb-12">
-          <Badge variant="secondary" className="mb-2 md:mb-4 text-xs md:text-sm">
+        <div className="text-center mb-10 md:mb-16">
+          <Badge variant="secondary" className="mb-4 md:mb-6 text-sm md:text-base px-4 py-2">
             🏔️ Popular Destinations
           </Badge>
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-balance">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-balance">
             Explore <span className="text-primary">Incredible India</span>
           </h2>
-          <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty px-2">
+          <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty px-4">
             Discover India's most beautiful destinations with our reliable car rental service. From beaches to
             mountains, we'll get you there safely.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {destinations.map((destination) => (
-            <Card key={destination.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+            <Card key={destination.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-gray-300 shadow-lg">
               <CardContent className="p-0">
                 <div className="relative">
                   <img
@@ -94,46 +94,46 @@ export function CarCatalogue() {
                       `/placeholder.svg?height=200&width=400&query=${destination.name || "/placeholder.svg"} India destination`
                     }
                     alt={destination.name}
-                    className="w-full h-28 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-32 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {destination.popular && (
-                    <Badge className="absolute top-2 left-2 bg-primary text-[10px] md:text-xs">⭐ Popular</Badge>
+                    <Badge className="absolute top-3 left-3 bg-primary text-xs md:text-sm px-3 py-1">⭐ Popular</Badge>
                   )}
-                  <div className="absolute top-2 right-2 bg-background/80 backdrop-blur rounded-full p-1 md:p-2">
+                  <div className="absolute top-3 right-3 bg-background/90 backdrop-blur rounded-full p-2 md:p-3">
                     <div className="flex items-center gap-1">
-                      <Star className="h-3 w-3 md:h-4 md:w-4 fill-yellow-400 text-yellow-400" />
-                      <span className="text-xs md:text-sm font-medium">{destination.rating}</span>
+                      <Star className="h-4 w-4 md:h-5 md:w-5 fill-yellow-400 text-yellow-400" />
+                      <span className="text-sm md:text-base font-semibold">{destination.rating}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-2 md:p-6">
-                  <div className="mb-2 md:mb-4">
-                    <div className="flex items-center gap-1 md:gap-2 mb-1 md:mb-2">
+                <div className="p-4 md:p-6">
+                  <div className="mb-3 md:mb-4">
+                    <div className="flex items-center gap-2 mb-2">
                       <MapPin className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                      <span className="text-[11px] md:text-sm text-muted-foreground">{destination.state}</span>
+                      <span className="text-xs md:text-sm text-muted-foreground font-medium">{destination.state}</span>
                     </div>
-                    <h3 className="text-[13px] md:text-xl font-bold mb-1">{destination.name}</h3>
-                    <p className="hidden md:block text-muted-foreground text-sm">{destination.description}</p>
+                    <h3 className="text-base md:text-lg font-semibold mb-2">{destination.name}</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{destination.description}</p>
                   </div>
 
-                  <div className="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-4">
+                  <div className="flex flex-wrap gap-1.5 mb-3 md:mb-4">
                     {destination.highlights.map((highlight, index) => (
-                      <Badge key={index} variant="outline" className="text-[11px] md:text-xs">
+                      <Badge key={index} variant="outline" className="text-xs px-2 py-1">
                         {highlight}
                       </Badge>
                     ))}
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <div className="hidden md:flex items-center gap-1 text-sm text-muted-foreground">
-                      <Camera className="h-4 w-4" />
+                    <div className="hidden md:flex items-center gap-2 text-xs text-muted-foreground">
+                      <Camera className="h-3 w-3" />
                       <span>Perfect for road trips</span>
                     </div>
                     <Button
                       variant="outline"
                       size="sm"
-                      className="text-[11px] md:text-sm ml-auto md:ml-0 bg-transparent px-2 py-1 md:px-3 md:py-2"
+                      className="text-xs md:text-sm ml-auto md:ml-0 bg-transparent px-3 py-1.5 md:px-4 md:py-2 border hover:bg-primary hover:text-white transition-all"
                     >
                       Explore
                     </Button>

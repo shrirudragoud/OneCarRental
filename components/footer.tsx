@@ -9,8 +9,18 @@ export function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Car className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold">CarRentz</span>
+              <img 
+                src="/logo.png" 
+                alt="OneCar Logo" 
+                className="h-16 w-16 object-contain"
+              />
+              <div className="flex flex-col">
+                <div className="flex items-center">
+                  <span className="text-2xl font-bold text-yellow-500">One</span>
+                  <span className="text-2xl font-bold text-white">Car</span>
+                </div>
+                <span className="text-sm font-medium text-background/80 -mt-1">rentals</span>
+              </div>
             </div>
             <p className="text-background/80 text-pretty">
               Your trusted partner for memorable travel experiences. Rent the perfect car for every adventure with
@@ -105,7 +115,7 @@ export function Footer() {
 
         <div className="border-t border-background/20 mt-8 pt-8 text-center">
           <p className="text-background/60">
-            © 2024 CarRentz. All rights reserved. Made with ❤️ for travelers worldwide.
+            © 2024 OneCar. All rights reserved. Made with ❤️ for travelers worldwide.
           </p>
         </div>
       </div>

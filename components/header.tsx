@@ -13,8 +13,18 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Car className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold text-foreground">OneCar</span>
+            <img 
+              src="/logo.png" 
+              alt="OneCar Logo" 
+              className="h-16 w-16 object-contain"
+            />
+            <div className="flex flex-col">
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-yellow-500">One</span>
+                <span className="text-2xl font-bold text-black">Car</span>
+              </div>
+              <span className="text-sm font-medium text-gray-600 -mt-1">rentals</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
