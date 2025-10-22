@@ -4,44 +4,44 @@ import { Star } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Sarah & Family",
-    role: "Family Road Trip",
+    name: "Prakash & Family",
+    role: "Pune ➝ Mahabaleshwar Weekend",
     rating: 5,
     comment:
-      "Our kids still talk about our cross-country adventure! The spacious SUV was perfect for all our gear and the memories we made will last forever. Thank you for making our family dream trip possible!",
-    avatar: "/smiling-brown-haired-woman.png",
+      "Smooth drive from Pune to Mahabaleshwar! The car handled the ghats perfectly and we had enough space for everyone. Fresh strawberries, viewpoints, and stress-free travel—awesome experience.",
+    avatar: "/placeholder.svg",
   },
   {
-    name: "The College Crew",
-    role: "Friends Reunion",
+    name: "Mumbai Friends Group",
+    role: "Monsoon Drive to Lonavala",
     rating: 5,
     comment:
-      "Five friends, one epic road trip! We laughed until our stomachs hurt and took the most amazing photos. The car was spotless and perfect for our spontaneous detours and late-night drives.",
-    avatar: "/smiling-asian-man-glasses.png",
+      "Perfect monsoon getaway! Clean car, great mileage, and super comfy for the expressway drive. Tiger Point, bhajiyas, chai—memories for life!",
+    avatar: "/placeholder.svg",
   },
   {
-    name: "Emma & Jake",
-    role: "Couple's Getaway",
+    name: "Sneha & Rohan",
+    role: "Alibaug Beach Escape",
     rating: 5,
     comment:
-      "Our romantic weekend escape was absolutely perfect. Driving through the mountains with the windows down, sharing playlists, and discovering hidden gems together - pure magic!",
-    avatar: "/professional-blonde-woman.png",
+      "A quick beach break from Mumbai—the car was spotless and the ride was super smooth. Loved the flexibility to explore Kashid and Revdanda on our own time.",
+    avatar: "/placeholder.svg",
   },
   {
-    name: "The Adventure Squad",
-    role: "Group Expedition",
+    name: "Kolhapur Riders",
+    role: "Heritage & Food Trail",
     rating: 5,
     comment:
-      "Six friends, three cars, one incredible journey! The group booking was seamless and every vehicle was adventure-ready. We created memories that will bond us for life.",
-    avatar: "/smiling-bearded-man.png",
+      "From temples to misal pav to jaggery markets—the trip was seamless. Reliable car, easy pickup, and great support whenever we needed directions.",
+    avatar: "/placeholder.svg",
   },
   {
-    name: "Maria & Sisters",
-    role: "Girls Trip",
+    name: "Nashik Wine Crew",
+    role: "Sula Vineyards Day Trip",
     rating: 5,
     comment:
-      "Sister bonding at its finest! We sang along to our favorite songs, stopped at every scenic viewpoint, and had the most therapeutic conversations. This trip healed our souls.",
-    avatar: "/smiling-latina-woman.png",
+      "Zero hassle drive from Thane to Nashik. Plenty of boot space, strong AC, and a super comfy ride. Made our vineyard hopping easy and fun!",
+    avatar: "/placeholder.svg",
   },
 ]
 

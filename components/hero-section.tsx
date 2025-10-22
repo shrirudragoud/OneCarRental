@@ -447,7 +447,7 @@ export function HeroSection() {
                     <span className="hidden md:inline">Call Us Now - Book {cars[selectedCar].name}</span>
                   </Button>
                   <p className="text-sm text-muted-foreground">
-                    Call us at <span className="font-semibold text-primary">+91 9860571601</span> to book instantly
+                    Call us at <span className="font-semibold text-primary">+91 7972456728</span> to book instantly
                   </p>
                 </div>
               </div>
